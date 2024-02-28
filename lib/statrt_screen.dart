@@ -26,9 +26,10 @@ class StatrtScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          OutlinedButton(
+          OutlinedButton.icon(
             onPressed: () {},
-            child: const Text("Start Quiz"),
+            icon: const Icon(Icons.arrow_right_outlined),
+            label: const Text("Start Quiz"),
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
           )
         ],
