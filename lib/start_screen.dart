@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 
-class StatrtScreen extends StatelessWidget {
-  const StatrtScreen({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   @override
   Widget build(context) {

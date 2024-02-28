@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/statrt_screen.dart';
+import 'package:quiz_app/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -19,7 +19,7 @@ class _QuizState extends State<Quiz> {
               Color.fromARGB(255, 107, 15, 168),
             ], begin: Alignment.topLeft, end: Alignment.bottomRight),
           ),
-          child: const StatrtScreen(),
+          child: const StartScreen(),
         ),
       ),
     );
