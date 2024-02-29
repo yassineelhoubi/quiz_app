@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:quiz_app/custom_widgets/text_title.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.switchScreen, {super.key});
@@ -18,13 +19,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const Text(
-            "Learn Flutter the fun way!",
-            style: TextStyle(
-              color: Color.fromARGB(255, 237, 223, 252),
-              fontSize: 24,
-            ),
-          ),
+          const TextTitle("Learn Flutter the fun way!"),
           const SizedBox(
             height: 80,
           ),
