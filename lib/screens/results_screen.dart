@@ -9,7 +9,7 @@ class ResultsScreen extends StatelessWidget {
   final List<String> chosenAnsers;
   final void Function() onRestart;
 
-  List<Map<String, Object>> getSummaryData() {
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
     for (var i = 0; i < chosenAnsers.length; i++) {
       summary.add({
@@ -24,7 +24,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final numCorrectQuestions = summaryData.where((data) {
       return data["correct_answer"] == data["user_answer"];
@@ -43,7 +42,7 @@ class ResultsScreen extends StatelessWidget {
               fontSize: 22,
             ),
             const SizedBox(height: 30),
-            QuestionsSummary(getSummaryData()),
+            QuestionsSummary(summaryData),
             const SizedBox(height: 30),
             OutlinedButton.icon(
               onPressed: onRestart,
