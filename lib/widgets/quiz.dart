@@ -31,10 +31,17 @@ class _QuizState extends State<Quiz> {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        // selectedAnswers.clear();
-        activeScreen = ResultsScreen(chosenAnsers: selectedAnswers);
+        activeScreen = ResultsScreen(
+            chosenAnsers: selectedAnswers, onRestart: restartQuiz);
       });
     }
+  }
+
+  void restartQuiz() {
+    selectedAnswers.clear();
+    setState(() {
+      activeScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
+    });
   }
 
   @override
