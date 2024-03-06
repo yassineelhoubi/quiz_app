@@ -14,6 +14,7 @@ class _QuizState extends State<Quiz> {
   Widget? activeScreen;
 
   final List<String> selectedAnswers = [];
+  bool showFloatingActionButton = false;
 
   @override
   void initState() {
@@ -24,6 +25,7 @@ class _QuizState extends State<Quiz> {
   void switchScreen() {
     setState(() {
       activeScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
+      showFloatingActionButton = true;
     });
   }
 
@@ -44,10 +46,26 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void backToStartScreen() {
+    showFloatingActionButton = false;
+    selectedAnswers.clear();
+    activeScreen = StartScreen(switchScreen);
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: Visibility(
+          visible: showFloatingActionButton,
+          child: FloatingActionButton(
+            onPressed: () => setState(() {
+              backToStartScreen();
+            }),
+            tooltip: 'Back to Start Screen',
+            child: const Icon(Icons.arrow_back_ios_new),
+          ),
+        ),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
